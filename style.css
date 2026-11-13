@@ -1,0 +1,121 @@
+:root{
+  --blue:#0b3fb3;
+  --blue2:#1d6bff;
+  --ink:#0a1a3a;
+  --muted:#5a6a8a;
+  --bg:#ffffff;
+  --soft:#eef4ff;
+  --line:#d8e4ff;
+  --wa:#25d366;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1050px;margin:0 auto;padding:0 20px}
+
+/* Cabeçalho */
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo img{height:52px;width:auto;display:block}
+nav ul{display:flex;align-items:center;gap:20px;list-style:none;margin:0;padding:0;font-weight:600;font-size:15px}
+nav a:hover{color:var(--blue2)}
+nav a.plat{background:var(--blue);color:#fff;padding:9px 14px;border-radius:999px;font-size:13px}
+nav a.plat:hover{background:var(--blue2);color:#fff}
+.menu{display:none;background:none;border:0;font-size:30px;color:var(--ink);cursor:pointer}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;border:0;cursor:pointer;font-size:16px;text-align:center;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn-wa{background:var(--wa);color:#05361b}
+.btn-line{background:transparent;border:2px solid #fff;color:#fff}
+
+/* Hero */
+.hero{background:linear-gradient(150deg,var(--blue) 0%,var(--blue2) 100%);color:#fff;padding:56px 0 70px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero h1{font-size:clamp(30px,6vw,52px);line-height:1.1;margin:0 0 14px}
+.hero p{max-width:520px;font-size:18px;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.cta.center{justify-content:center}
+.badge{display:inline-block;background:rgba(255,255,255,.18);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:16px}
+.radar{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:200px;height:200px;border-radius:50%;border:2px solid rgba(255,255,255,.35)}
+.radar:before,.radar:after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.5);animation:ping 2.4s infinite}
+.radar:after{animation-delay:1.2s}
+.radar i{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.3)}
+@keyframes ping{from{transform:scale(.3);opacity:1}to{transform:scale(1.5);opacity:0}}
+
+/* Seções */
+section{padding:60px 0}
+section.alt{background:var(--soft)}
+h2{font-size:clamp(24px,4vw,34px);margin:0 0 8px;color:var(--blue)}
+.sub{color:var(--muted);margin:0 0 30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(29,107,255,.18)}
+.card .ic{font-size:30px}
+.card h3{margin:10px 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+
+/* Calculadora */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+.box{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid var(--line);background:var(--soft);color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:600;font-size:15px}
+.chip.on{background:var(--blue2);color:#fff;border-color:var(--blue2)}
+.qty{font-size:22px;font-weight:700}
+input[type=range]{width:100%;accent-color:var(--blue2);height:36px}
+.tiers{list-style:none;margin:10px 0 0;padding:0;font-size:14px;color:var(--muted)}
+.tiers li{padding:6px 10px;border-radius:10px;margin-bottom:4px;border:1px solid transparent}
+.tiers li.on{background:var(--soft);border-color:var(--blue2);color:var(--blue)}
+.old{min-height:22px;color:var(--muted);text-decoration:line-through;font-weight:600}
+.price{font-size:46px;font-weight:800;color:var(--blue2);line-height:1.1}
+.price small{font-size:16px;color:var(--muted);font-weight:600}
+.off{display:inline-block;min-height:28px;margin-top:6px;font-weight:700;color:#0a7a3a;background:#e6f8ee;border-radius:999px;padding:2px 12px;font-size:14px}
+.off:empty{display:none}
+.resumo{margin:10px 0 18px}
+.box .btn{width:100%}
+
+/* Dúvidas */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:22px;line-height:1;color:var(--blue2)}
+details[open] summary:after{content:"–"}
+details p{margin:10px 0 0;color:var(--muted)}
+
+/* Chamada final */
+.final{background:linear-gradient(150deg,var(--blue),var(--blue2));color:#fff;text-align:center;border-radius:26px;padding:44px 22px}
+.final h2{color:#fff}
+.final p{margin:0 0 22px}
+
+/* Rodapé */
+footer{padding:30px 0 100px;text-align:center;color:var(--muted);font-size:14px}
+footer p{margin:6px 0}
+footer a{color:var(--blue);font-weight:700;text-decoration:underline}
+.flogo{height:54px;width:auto}
+
+/* Botão flutuante do WhatsApp */
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.3);animation:pulse 2s infinite}
+.fab svg{width:34px;height:34px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* Animação ao rolar */
+.rev{opacity:0;transform:translateY(18px);transition:.6s}
+.rev.in{opacity:1;transform:none}
+
+/* Celular */
+@media(max-width:860px){
+  .menu{display:block}
+  nav ul{display:none;position:absolute;left:0;right:0;top:70px;background:#fff;flex-direction:column;align-items:stretch;padding:16px 20px;border-bottom:1px solid var(--line);gap:14px}
+  nav ul.open{display:flex}
+  nav a.plat{text-align:center;padding:12px 14px;font-size:14px}
+}
+@media(max-width:760px){
+  .radar{display:none}
+  .calc{grid-template-columns:1fr}
+  .hero{padding:40px 0 54px}
+  .hero .btn,.final .btn{width:100%}
+  section{padding:44px 0}
+  .logo img{height:46px}
+}
